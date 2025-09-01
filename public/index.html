@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Socket.IO chat</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer src="chat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💬 Socket.IO chat</h1>
+      <p class="muted">: WebSockets / Socket.IO</p>
+    </header>
+
+    <section class="profile">
+      <form id="profile-form">
+        <label>
+           nickname
+          <input id="nickname" type="text" placeholder="Örn: Charlie" maxlength="32" required />
+        </label>
+        <label>
+          Room
+          <input id="room" type="text" placeholder="Örn: lobi, spor, tech" />
+        </label>
+        <button type="submit">Join / Update Room</button>
+      </form>
+      <div id="presence" class="presence">Room: <span id="roomName">lobi</span> • person: <span id="count">1</span></div>
+    </section>
+
+    <section class="chat">
+      <ul id="messages" class="messages"></ul>
+      <form id="msg-form" class="msg-form">
+        <input id="m" type="text" placeholder="Mesaj yaz..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <p class="muted">Example: You can send announcements with the /admin namespace (details in README.md).</p>
+    </footer>
+  </div>
+</body>
+</html>
