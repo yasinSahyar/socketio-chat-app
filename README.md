@@ -22,17 +22,20 @@ Supports **nicknames**, **rooms**, and **real-time messaging**.
 - **Room** = Room inside the building  
 - **Socket** = Person who can enter multiple rooms but only inside one building
 
-### Namespaces Example
+## Namespaces Example
 
 ```js
-// Server-side: create a /chat namespace
+
 const chatNamespace = io.of('/chat');
 
 chatNamespace.on('connection', (socket) => {
   console.log('User connected to chat namespace:', socket.id);
 });
+```
 
-Rooms
+
+---
+## Rooms
 
 Subgroups inside a namespace
 
@@ -44,16 +47,20 @@ A socket can join multiple rooms in one namespace
 
 Used to scope messages to specific groups
 
-Rooms Example
-// Server-side: join a room inside the chat namespace
+## Rooms Example
+```js
 chatNamespace.on('connection', (socket) => {
   socket.on('join room', (room) => {
     socket.join(room);
     console.log(`User ${socket.id} joined room: ${room}`);
   });
 });
+```
 
-🚀 Deployment using Azure Web Service
+
+---
+
+## 🚀 Deployment using Azure Web Service
 
 The application is deployed at:
 👉 https://newchatapp-frhdg5gsccf8dmht.northeurope-01.azurewebsites.net/
