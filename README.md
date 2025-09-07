@@ -7,11 +7,11 @@ Supports **nicknames**, **rooms**, and **real-time messaging**.
 
 ## ⚙️ How the App Works
 
-1. Enter a nickname (e.g., Charlie).  
-2. Choose or create a room (e.g., tech).  
+1. Enter a nickname (e.g., **Charlie**).  
+2. Choose or create a room (e.g., **tech**).  
 3. Write a message and click **Send**.  
-4. Messages are visible only to users in the same room.  
-5. System messages notify when users join, leave, or change nicknames.  
+4. Messages are visible only to users in the **same room**.  
+5. System messages notify when users join, leave, or change nicknames.
 
 ---
 
@@ -20,7 +20,7 @@ Supports **nicknames**, **rooms**, and **real-time messaging**.
 ### Analogy
 - **Namespace** = Building  
 - **Room** = Room inside the building  
-- **Socket** = Person who can enter multiple rooms but only inside one building  
+- **Socket** = Person who can enter multiple rooms but only inside one building
 
 ### Namespaces Example
 
@@ -31,7 +31,9 @@ chatNamespace.on('connection', (socket) => {
   console.log('User connected to chat namespace:', socket.id);
 });
 
-Rooms
+--- 
+
+##  Rooms
 
 Subgroups inside a namespace
 
@@ -43,7 +45,9 @@ A socket can join multiple rooms in one namespace
 
 Used to scope messages to specific groups
 
-Rooms Example
+---
+
+## Rooms Example
 chatNamespace.on('connection', (socket) => {
   socket.on('join room', (room) => {
     socket.join(room);
@@ -51,13 +55,16 @@ chatNamespace.on('connection', (socket) => {
   });
 });
 
-🚀 Deployment using Azure Web Service
+---
+
+## 🚀 Deployment using Azure Web Service
 
 The application is deployed at:
 👉 https://newchatapp-frhdg5gsccf8dmht.northeurope-01.azurewebsites.net/
 
 
--
+---
+
 
 ![chat Screenshot](images/locall01.png)  
 ![chat Screenshot](images/locall02.png)  
